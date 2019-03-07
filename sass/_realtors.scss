@@ -11,6 +11,7 @@
 
 	@include respond(med) {
 		grid-column: 1 / -1;
+		padding-bottom: 2.5rem;
 	}
 
 	&__list {
@@ -22,7 +23,6 @@
 		
 		@include respond(med) {
 			grid-template-columns: repeat(3, min-content max-content);
-			margin-bottom: 2.5rem;
 		}
 
 		@include respond(phone) {

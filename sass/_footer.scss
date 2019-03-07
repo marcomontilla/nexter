@@ -3,16 +3,19 @@
 	grid-column: full-start / full-end;
 
 	padding: 8rem;
+	
+	@include respond(phone) {
+		padding: 5rem;
+	}
 }
 
 .nav {
 	list-style: none;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	grid-gap: 2rem;
 	align-items: center;
-
 
 	&__link:link,
 	&__link:visited {
@@ -42,4 +45,8 @@
 	margin-right: auto;
 	margin-left: auto;
 	width: 70%;
+	
+	@include respond(phone) {
+		width: 100%;
+	}
 }

@@ -1,16 +1,32 @@
 .features {
 	grid-column: center-start / center-end;
-
 	margin: 15rem 0;
-
-
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-	grid-gap: 6rem;
-	align-items: start;
+	
+	@include respond(phone) {
+		margin: 7rem 0;
+	}
+	
+	@supports(display: grid) { /*If The browser does not support CSS Grid*/
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-gap: 6rem;
+		align-items: start;
+	}
 }
 
 .feature {
+
+	/*If The browser does not support CSS Grid*/
+	float: left;
+	width: 33.3333%;
+	margin-bottom: 6rem;
+
+	@supports(display: grid) {
+		width: auto;
+		margin-bottom: 0;
+	}
+	/*End*/
+
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	grid-gap: 1.5rem 2.5rem;

@@ -5,6 +5,10 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	grid-gap: 7rem;
+
+	@include respond(phone) {
+		margin: 7rem 0;
+	}
 }
 
 .home {

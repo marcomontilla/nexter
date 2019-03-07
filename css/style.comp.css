@@ -268,7 +268,8 @@ body {
   grid-row-gap: 2rem; }
   @media only screen and (max-width: 50em) {
     .realtors {
-      grid-column: 1 / -1; } }
+      grid-column: 1 / -1;
+      padding-bottom: 2.5rem; } }
   .realtors__list {
     display: grid;
     grid-template-columns: min-content max-content;
@@ -277,8 +278,7 @@ body {
     align-items: center; }
     @media only screen and (max-width: 50em) {
       .realtors__list {
-        grid-template-columns: repeat(3, min-content max-content);
-        margin-bottom: 2.5rem; } }
+        grid-template-columns: repeat(3, min-content max-content); } }
     @media only screen and (max-width: 37.5em) {
       .realtors__list {
         grid-template-columns: min-content max-content; } }
@@ -293,16 +293,31 @@ body {
 
 .features {
   grid-column: center-start / center-end;
-  margin: 15rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 6rem;
-  align-items: start; }
+  margin: 15rem 0; }
+  @media only screen and (max-width: 37.5em) {
+    .features {
+      margin: 7rem 0; } }
+  @supports (display: grid) {
+    .features {
+      /*If The browser does not support CSS Grid*/
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 6rem;
+      align-items: start; } }
 
 .feature {
+  /*If The browser does not support CSS Grid*/
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 6rem;
+  /*End*/
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-gap: 1.5rem 2.5rem; }
+  @supports (display: grid) {
+    .feature {
+      width: auto;
+      margin-bottom: 0; } }
   .feature__icon {
     fill: #c69963;
     width: 4.5rem;
@@ -370,6 +385,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem; }
+  @media only screen and (max-width: 37.5em) {
+    .homes {
+      margin: 7rem 0; } }
 
 .home {
   background-color: #f9f7f6;
@@ -482,11 +500,14 @@ body {
   background-color: #101d2c;
   grid-column: full-start / full-end;
   padding: 8rem; }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      padding: 5rem; } }
 
 .nav {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 2rem;
   align-items: center; }
   .nav__link:link, .nav__link:visited {
@@ -511,3 +532,6 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 70%; }
+  @media only screen and (max-width: 37.5em) {
+    .copyright {
+      width: 100%; } }
